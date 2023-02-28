@@ -1,0 +1,31 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+    <div class="new-post">
+        <div class="np-container">
+            {% if main %}
+                <h1>Home</h1>
+                <div id ='post-app'>
+                    <form id = 'post-form'>
+                        {{form}}
+                        <button type='button' form='post-form' class="post-btn squeal-btn">Squeal</button>
+                    </form>
+                </div>
+            {% else %}
+                <h1 class="following-header">Following Feed</h1>
+            {% endif %}
+        </div>
+    </div>
+
+    <section class="posts">
+        <div class="post-feed">
+            
+        </div>
+        <div class="pages">
+            <button data-task="back" type='button' class="page-btn squeal-btn">Back</button>        
+            <div class="page-num">1</div>
+            <div hidden class="num-pages"></div>
+            <button data-task="next" type='button' class="page-btn squeal-btn">Next</button>        
+        </div>
+    </section>
+{% endblock %}

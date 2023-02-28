@@ -1,0 +1,74 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}Social Network{% endblock %}</title>
+        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://kit.fontawesome.com/4796f673c0.js" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <link href="{% static 'network/styles.css' %}" rel="stylesheet">
+        {% block extrahead %} {% endblock %}
+    </head>
+    <body>
+
+        <nav class="navbar">
+            <div class="nav-container">
+                <a class="navbar-brand" href="#">Squabble</a>
+                <div>
+                  <ul class="pmr-auto">
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><strong>{{ user.username }}</strong></a>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item">
+                      <a class="nav-link home" href="{% url 'index' %}"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link following-posts" href="{% url 'indexFol' user.username  %}"><i class="fa-solid fa-skull"></i> Following</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}"><i class="fa-solid fa-right-to-bracket"></i> Log In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'register' %}"><i class="fa-solid fa-user"></i> Register</a>
+                        </li>
+                    {% endif %}
+                  </ul>
+                </div>
+            </div>
+          </nav>
+        
+        <div class="body">
+            {% block body %}
+            {% endblock %}
+        </div>
+
+        <div class="extra">
+            <div class="bar-container">
+                <div class = "search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" name = "q">
+                </div>
+            </div>
+
+            <div class = "content-box">
+                <div class = "cont-header">You might like</div>
+                <div class="content-post">
+                    <div class="pop-post">ElStone <div class="rec-btn">Follow</div> </div>
+                    <div class="pop-post">Vlaz <div class="rec-btn">Follow</div> </div>
+                    <div class="pop-post">Pepe <div class="rec-btn">Follow</div> </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+    <script src="{% static 'network/posts.js' %}"></script>
+</html>

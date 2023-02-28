@@ -1,0 +1,59 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block extrahead %}
+    <link href = "{% static 'network/profile.css' %}" rel="stylesheet">
+    <script src= "{% static 'network/profile.js' %}"></script> 
+{% endblock %}
+
+
+
+{% block body %}
+    <div class="return-bar">  
+        <i class="fas fa-arrow-left"></i>
+        <div class="username">{{puser}}</div>
+    </div>
+
+    <div class="banner">
+        <div class="profile-frame">
+            <div id = 'p_top'>
+                <img src = 'https://pbs.twimg.com/profile_images/1430245111921877003/6z2cYS1q_400x400.jpg'>
+
+                {% if is_followed %}
+                    <button class="follow-btn squeal-btn">UnFollow</button>
+                {% else %}
+                    <button class="follow-btn squeal-btn">Follow</button>
+                {% endif %}
+            </div>
+
+            <div class="user-info">
+                <div class="username">{{puser}}</div>
+                <div class="userat">@{{puser}}</div>
+            </div>
+
+            <div id="user-bio">
+                Hello i am a user of this app and i like videogames, coding and drawing. I'm always really sleepy.
+            </div>
+
+            <div class="user-follow">
+                <div class="user-followers">{{followers}} <span class="disc-wrd">Followers</span></div>
+                <div class="user-following">{{following}} <span class="disc-wrd">Following</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="posts-bar"> 
+        <div class="profile-btn">Squeels</div>
+        <div class="profile-btn">Squeels & Arguements</div>
+        <div class="profile-btn">Media</div>
+        <div class="profile-btn">Likes</div>
+    </div>
+
+    <section class="Posts">
+        <div class="post-feed">
+            
+        </div>
+    </section>
+    <div hidden class="page-num">1</div>
+    <div hidden class="num-pages"></div>
+{% endblock %}

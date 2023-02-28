@@ -1,0 +1,90 @@
+
+.return-bar {
+    margin-top: 1rem;
+    margin-left: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    position: fixed;
+}
+
+#p_top {
+    position: relative;
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 60%;
+    height: 7.2rem;
+}
+
+#user-bio {
+    margin: 0px 1rem;
+}
+
+.banner {
+    margin-top: 5px;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://wallpaper.dog/large/20546738.png');
+    background-size: 100% 48%;
+    background-repeat: no-repeat;
+}
+
+.squeal-btn {
+    position: absolute;
+    right: 3%;
+    background-color: orangered;
+    height: 30%;
+    font-size: 1.2rem;
+    margin-top: 4.5rem;
+}
+
+#p_top img {
+    position: absolute;
+    left: 3%;
+    width: 7rem;
+    border: solid 3px orangered;
+    border-radius: 100px;
+}
+
+.username {
+    font-weight: bolder;
+    font-size: 1.3rem;
+    margin-bottom: 3px;
+}
+
+.user-info {
+    margin: 1.3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.user-follow {
+    margin: 20px 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.disc-wrd {
+    margin: 0px 5px;
+    color: orangered;
+}
+
+.posts-bar {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: solid 1px #1f2831;
+}
+
+.profile-btn {
+    padding: 20px 1rem;
+}
+
+.profile-btn:hover {
+    border-bottom: solid 1px orangered;
+    transition-duration: 200ms;
+}
+
