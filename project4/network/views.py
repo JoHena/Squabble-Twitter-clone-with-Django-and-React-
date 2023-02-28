@@ -141,7 +141,7 @@ def LikePost(request, content):
     if(post.likes.filter(username = request.user.username).exists()):
         post.likes.remove(User.objects.get(username = request.user.username))
     else:
-        post.likes.add(User.objects.get(username = ))
+        post.likes.add(User.objects.get(username = follow))
     return JsonResponse({'message': 'All done'}, status = 201)
 
 
